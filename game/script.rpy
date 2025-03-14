@@ -4,11 +4,23 @@
 # name of the character.
 
 define y = Character("") # Narrator has no name
-define h = Character("Hydra")
+define h = Character("Hydra") # The Hydra as a whole
 define a = Character("Phoebe")
 define b = Character("Alice")
 define c = Character("Rhea")
 define d = Character("Theia")
+
+default aAffection = 0
+default bAffection = 0
+default cAffection = 0
+default dAffection = 0
+
+default maxpoints = 100 #This is the highest points a character can have.
+
+default characterA = "Phoebe"
+default characterB = "Alice"
+default characterC = "Rhea"
+default characterD = "Theia"
 
 # The game starts here.
 
@@ -26,6 +38,8 @@ label start:
 
     show eileen happy
 
+    show screen button with dissolve
+
     # These display lines of dialogue.
 
     y "It started when I was needing hydra-ted. The Hydra was there, with each head arguing amongst themselves, whilst perusing the drinks aisle, arguing about which brand of drink to buy."
@@ -42,6 +56,7 @@ label start:
             a "You dare talk back to me? Who do you think you are?"
             y "I'm sorry, I'll be on my way now..."
             a "Please, don't go..."
+            $ aAffection += 5
         "Soda":
             b "I think you'll find that's mine."
             y "She look my soda. I'm still dehydra-ted, but somehow, I think I'll be fine."
@@ -49,11 +64,13 @@ label start:
             y "It wasn't intended for you in the first place!"
             b "Here, you can have it back"
             y "Thanks, I guess?"
+            $ bAffection += 5
         "Limeade":
             c "Awww, that was the last limeade. Don't worry about me, go and enjoy it. I'll think about other options..."
             y "You can have it if you really want it..."
             c "No, go ahead and enjoy yourself whilst I remain like limeade itself, sour"
             y "Here, I'll take the water "
+            $ cAffection += 5
         "Beer":
             h "Hmph, such an unsophisticed drink, suits an unsophisticated person."
             y "The Hydra look really perturbed, then left, muttering that beer was a layman's drink"
@@ -63,6 +80,7 @@ label start:
             d "Wine?! Truly the drinks of the gods! One does appreciate how it tastes. You've really made the right call here!"
             y "It's only wine, but I must concur with you if I'm honest"
             d "See?! I knew you'd get it."
+            $ dAffection += 5
 
     menu:
         "Suddenly I felt the urge to.."
@@ -73,15 +91,19 @@ label start:
                     y "I'm like Batman? That's ace!"
                     b "No, you're Robin"
                     y "Ouch"
+                    $ bAffection += 5
                 "Even if there was no gravity, I'd still fall for you":
                     a "The cheek to talk to me like that!"
                     a "Well, thanks for the compliment I guess"
+                    $ aAffection += 5
         "Tell a joke":
             menu:
                 "I had a hydra joke, but it got ahead of itself":
                     c "*hee hee*"
+                    $ cAffection += 5
                 "Some people are hydrophobic, I'm hydraphobic":
                     d "Wow, that's clever, like so clever! How do you manage it?"
+                    $ dAffection += 5
         "Shout 'FIRE!'":
             h "WHAT?! WHERE?!"
             y "The Hydra frantically looked around for the source of the fire, before realising I was playing a prank"
@@ -92,11 +114,17 @@ label start:
             h "No - you deserve the full might of my range!"
             y "Another shot flew out, but once again, I dodged out of the way"
             y "Is that all you've got?"
-            y "The next thing I knew, I was laying on the floor and was losing grip on reality."
+            y "The next thing I knew, I woke up in hospital. I don't know what happened to the Hydra after that"
             return
-        # Possibly better to set variables incrementing the relationship with each head.
-        # TODO store choices
 
+    h "Here's our phone number."
+
+    y "After that, I invited the Hydra to..."
+    menu:
+        "karaoke":
+            y "Placeholder"
+        "the theme park":
+            y "Placeholder"
 
     # This ends the game.
 
