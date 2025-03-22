@@ -241,7 +241,23 @@ label start:
         b "No!"
         c "No!"
         d "No!"
-        jump reshowdates
+        y "It was just a suggestion!"
+        a "Well, you can take your suggestion and move it where the sun doesn't shine"
+        y "Who knew it was so easy to wind up a Hydra"
+        a "Choose your next actions very wisely"
+        menu:
+            "Double down":
+                y "You know you want to..."
+                a "Right, that's it."
+                b "Can I unleash my fully fury?"
+                a "Yes"
+                y "..."
+                y "I am slowly losing my grip on reality"
+                y "I probably shouldn't do that again"
+                return
+            "Concede the point":
+                y "All right let's do something else"
+                jump reshowdates
 
     label art:
         y "Art gallery?"
