@@ -26,6 +26,7 @@ default characterD = "Theia"
 
 label start:
 
+    play music "IntroMusic.mp3"
     # Show a background. This uses a placeholder by default, but you can
     # add a file (named either "bg room.png" or "bg room.jpg") to the
     # images directory to show it.
@@ -52,7 +53,7 @@ label start:
     menu:
         "Water":
             a "Water? Suits a plain fool, such as yourself."
-            y "THanks, I guess?"
+            y "Thanks, I guess?"
             a "You dare talk back to me? Who do you think you are?"
             y "I'm sorry, I'll be on my way now..."
             a "Please, don't go..."
@@ -103,6 +104,7 @@ label start:
                     $ cAffection += 5
                 "Some people are hydrophobic, I'm hydraphobic":
                     d "Wow, that's clever, like so clever! How do you manage it?"
+                    y "It wasn't really that good..."
                     $ dAffection += 5
         "Shout 'FIRE!'":
             h "WHAT?! WHERE?!"
@@ -117,14 +119,141 @@ label start:
             y "The next thing I knew, I woke up in hospital. I don't know what happened to the Hydra after that"
             return
 
-    h "Here's our phone number."
+    h "You're pretty okay, I guess you can have our contact details, here's our business card"
+    y "You have a business card? What for?"
+    h "Read it and find out"
+    y "'Many Heads Are Better Than One' - A Conflict Resolution Agency"
+    h "Well, we'd better be off, we've got a conflict to resolve. See you around?"
 
+    y "Later that night, I went home and forgot about the whole thing."
+    y "The next morning, I woke up convinced it was a dream - until I found the business card in my pocket"
     y "After that, I invited the Hydra to..."
-    menu:
+
+    default menuset = set()
+    default datechoices = 0
+
+    menu dates:
+        set menuset
         "karaoke":
-            y "Placeholder"
-        "the theme park":
-            y "Placeholder"
+            $ datechoices += 1
+            jump karaoke
+        "theme park":
+            $ datechoices += 1
+            jump themepark
+        "Beach":
+            $ datechoices += 1
+            jump beach
+        "Axe throwing":
+            $ datechoices += 1
+            jump axe
+        "art gallery":
+            $ datechoices += 1
+            jump art
+
+    label karaoke:
+        y "Karaoke, how about it?"
+        a "What makes you think I'd like that?"
+        b "I think I should choose what we - your idea sounds tedious"
+        c "I'd like to go"
+        d "As would I, another brilliant idea!"
+        y "With that in mind, we went to the karaoke"
+        show bg karaoke
+        jump reshowdates
+
+    label themepark:
+        y "What about Yeetland?"
+        a "That could be okay"
+        b "No, it's an awful idea. As aas expected of you."
+        c "I have a fear of heights, but let's do it!"
+        d "What are we waiting for!? Let's go, posthaste!"
+        show bg themepark
+        jump reshowdates
+
+    label beach:
+        y "Beach?"
+        a "Water waste of time"
+        b "The only beach here is you"
+        c "Sounds good to me"
+        d "Me too! Me too!"
+        show bg beach
+        y "The waves were gently lapping against the shore, with foam rolling onto the sand, and the seabirds were lulling around on the sand."
+        a "Why are you narrating this like it's a documentary?"
+        y "Wait? I said that out loud?!"
+        a "Either that or I can read your mind you fool"
+        y "Heh"
+        c "Let's get ice cream!"
+        d "No, lets' get a watermelon!"
+        a "We're getting ice cream, and that's that. Well, you're getting the ice cream"
+        y "Ice cream sounds delightful on a great day like today. What do you all want?"
+        a "Mint"
+        b "Chocolate"
+        c "Bubblegum"
+        d "Watermelon"
+        y "Is watermelon a flavour of ice cream?"
+        d "Not sure, I want watermelon though"
+        y "Well, I'll do my best."
+        y "..."
+        if dAffection > 0:
+            y "Right, I'm back, I was able to get you a watermelon too!"
+            $ dAffection += 5
+            d "Wow - you're actually incredible."
+        else:
+            y "Right, I'm back. I was unable to get you a watermelon, sorry. I did get you some strawberry ice cream, so I hope that you like that!"
+            d "Thank you - I'm sure it'll be fine"
+        a "Thank you for the ice cream"
+        b "Yeah, thanks, I guess..."
+        c "THANK YOU"
+        y "No need to shout - I'm just glad you're enjoying it"
+        y "..."
+        y "Huh, wanna go for a dip in the sea?"
+        a "I like the cut of your jib"
+        y "What?"
+        a "Err, nothing, ignore that! Yes, I would like to go"
+        b "Well, I certainly don't!"
+        a "Well, I do!"
+        b "Well, I certainly don't!"
+        a "Well, I do!"
+        b "Well, I certainly don't!"
+        a "Well, I do!"
+        b "Well, I certainly don't!"
+        a "Well, I do!"
+        b "Well, I certainly don't!"
+        a "Well, I do!"
+        y "Uh, guys? Wanna stop the arguing?"
+        a "I WANT TO SWIM"
+        b "I DON'T"
+        c "Hey, let's vote on it - I would like the swimming very much"
+        d "Me too"
+        b "I can't argue with democracy"
+        y "*splash*"
+        y "Hey, stop splashing the water in my face!"
+        b "I don't know why I didn't want to do this - this is great fun"
+        c "I'm having fun in the sun"
+        y "*splash splash*"
+        y "..."
+        y "Well, I'm beat, see you tomorrow?"
+        h "Sure!"
+        jump reshowdates
+
+    label axe:
+        y "Axe throwing?"
+        a "No!"
+        b "No!"
+        c "No!"
+        d "No!"
+        jump reshowdates
+
+    label art:
+        y "Art gallery?"
+        show bg gallery
+        jump reshowdates
+
+    label reshowdates:
+        if datechoices <= 2:
+            jump dates
+
+    
+
 
     # This ends the game.
 
