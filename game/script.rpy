@@ -191,11 +191,51 @@ label start:
 
     label themepark:
         y "What about Yeetland?"
-        a "That could be okay"
+        a "That could be okay, I guess..."
         b "No, it's an awful idea. As was expected of you."
-        c "I have a fear of heights, but let's do it!"
-        d "What are we waiting for!? Let's go, posthaste!"
+        c "What are we waiting for!? Let's go, posthaste!"
+        d "I have a fear of heights, but let's do it!"
         show bg themepark
+        d "Let's go on the Tea Cups!"
+        d "Wait, let's do the Dodgems first!"
+        d "Wait, wait, let's do the maze!"
+        b "Those suggestions are pretty bland, I say we go on the Pirate Ship!"
+        d "But I don't like heights..."
+        b "Then how about the Twister or the Chair Planes then?"
+        d "Those do sound better..."
+        b "Don't tell me you don't like fast rides too?!"
+        d "I plead the fifth!"
+        y "Hey, no need to get so argumentative over it - we can do them all, and you can close you're eyes if you're scared. Sound good?"
+        a "Where's my say?"
+        c "I want to try everything!"
+        y "..."
+        y "We went on all the rides, and I'm exhausted, everything feels like its moving"
+        d "Thank you for making me go past my boundaries..."
+        b "Not only should you thank us, you should be praising us!"
+        y "Calm down..."
+        y "Hey, before we go, want to go on the Cola Colossus?"
+        d "We are not going on a rollercoaster"
+        y "Why not? I thought you had great fun on the rides"
+        d "I did, but that's crossing a line"
+        a "I don't like rollercoasters so I vote against it"
+        b "Me too"
+        c "I must admit, I do wish to, but I know when I'm outvoted"
+        y "Ah well, it was just an idea..."
+        y "Are you thirsty?"
+        a "Yes, I'll have a water."
+        b "Water."
+        c "Please may I have a chocolate milkshake?"
+        d "Can I have a watermelon soda please?"
+        y "Coming right up!"
+        y "..."
+        y "Here you all go. I rather do hope you enjoy, especially at these prices"
+        a "You should be grateful for the opportunity to serve me"
+        y "Hmm... I do wonder about that..."
+        a "Thank you for today"
+        b "Yeah, it was nice..."
+        c "YOU'RE THE BEST"
+        d "YOU REALLY ARE"
+        y "Thanks - I had fun too"
         jump reshowdates
 
     label beach:
@@ -301,8 +341,6 @@ label start:
     label reshowdates:
         if datechoices <= 2:
             jump dates
-
-    
 
 
     # This ends the game.
