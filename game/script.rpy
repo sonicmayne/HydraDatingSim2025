@@ -22,6 +22,11 @@ default characterB = "Alice"
 default characterC = "Rhea"
 default characterD = "Theia"
 
+init python:
+    def blockProgress():
+        if renpy.music.is_playing("sound"):
+            renpy.pause((20-renpy.music.get_pos('sound')),hard=True)
+
 # The game starts here.
 
 label start:
@@ -140,10 +145,10 @@ label start:
         "theme park":
             $ datechoices += 1
             jump themepark
-        "Beach":
+        "beach":
             $ datechoices += 1
             jump beach
-        "Axe throwing":
+        "axe throwing":
             $ datechoices += 1
             jump axe
         "art gallery":
@@ -158,12 +163,36 @@ label start:
         d "As would I, another brilliant idea!"
         y "With that in mind, we went to the karaoke"
         show bg karaoke
+        y "So, what we singing? I'll scroll through the options"
+        y "Hydra is a Place on Earth?"
+        # play music "heaven.mp3"
+        $ blockProgress
+        y "Total Eclipse of the Heads?"
+        # play music "heart.mp3"
+        $ blockProgress
+        y "Hydra Killed the Radio Star?"
+        # play music "radio.mp3"
+        $ blockProgress
+        y "Heads of the Hydra?"
+        # play music "eye.mp3"
+        $ blockProgress
+        a "All of your suggestions are awful"
+        b "I wholeheartedly agree, are you an idiot?"
+        a "Hey, let's do this one!"
+        # play music "friday night.mp3"
+        $ blockProgress
+        c "Wow, you're great at karaoke!"
+        a "I'm ashamed to admit it, but you do have a rather good voice"
+        $ aAffection += 10
+        $ cAffection += 10
+        y "You guys are too kind, I think you'd have a much better singing voice than I do"
+        a "Well, you're not finding out. We're off."
         jump reshowdates
 
     label themepark:
         y "What about Yeetland?"
         a "That could be okay"
-        b "No, it's an awful idea. As aas expected of you."
+        b "No, it's an awful idea. As was expected of you."
         c "I have a fear of heights, but let's do it!"
         d "What are we waiting for!? Let's go, posthaste!"
         show bg themepark
@@ -176,6 +205,7 @@ label start:
         c "Sounds good to me"
         d "Me too! Me too!"
         show bg beach
+        play music "Despacito.mp3"
         y "The waves were gently lapping against the shore, with foam rolling onto the sand, and the seabirds were lulling around on the sand."
         a "Why are you narrating this like it's a documentary?"
         y "Wait? I said that out loud?!"
@@ -233,6 +263,10 @@ label start:
         y "..."
         y "Well, I'm beat, see you tomorrow?"
         h "Sure!"
+        $ aAffection += 5
+        $ bAffection += 5
+        $ cAffection += 5
+        $ dAffection += 5
         jump reshowdates
 
     label axe:
@@ -249,7 +283,7 @@ label start:
             "Double down":
                 y "You know you want to..."
                 a "Right, that's it."
-                b "Can I unleash my fully fury?"
+                b "Can I unleash my full fury?"
                 a "Yes"
                 y "..."
                 y "I am slowly losing my grip on reality"
