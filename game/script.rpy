@@ -24,8 +24,9 @@ default characterD = "Theia"
 
 init python:
     def blockProgress():
-        if renpy.music.is_playing("sound"):
-            renpy.pause((20-renpy.music.get_pos('sound')),hard=True)
+        if renpy.music.is_playing('sound'):
+            remaining_duration = 22
+            renpy.pause(remaining_duration, hard=True)  
 
 # The game starts here.
 
@@ -162,25 +163,26 @@ label start:
         c "I'd like to go"
         d "As would I, another brilliant idea!"
         y "With that in mind, we went to the karaoke"
+        stop music
         show bg karaoke
         y "So, what we singing? I'll scroll through the options"
+        play sound "heaven.mp3"
         y "Hydra is a Place on Earth?"
-        # play music "heaven.mp3"
-        $ blockProgress
+        $ blockProgress()
+        play sound "heart.mp3"
         y "Total Eclipse of the Heads?"
-        # play music "heart.mp3"
-        $ blockProgress
-        y "Hydra Killed the Radio Star?"
+        $ blockProgress()
         # play music "radio.mp3"
-        $ blockProgress
+        y "Hydra Killed the Radio Star?"
+        $ blockProgress()
+        play sound "eye.mp3"
         y "Heads of the Hydra?"
-        # play music "eye.mp3"
-        $ blockProgress
+        $ blockProgress()
         a "All of your suggestions are awful"
         b "I wholeheartedly agree, are you an idiot?"
         a "Hey, let's do this one!"
         # play music "friday night.mp3"
-        $ blockProgress
+        $ blockProgress()
         c "Wow, you're great at karaoke!"
         a "I'm ashamed to admit it, but you do have a rather good voice"
         $ aAffection += 10
