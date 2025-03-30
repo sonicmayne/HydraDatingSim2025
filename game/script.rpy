@@ -172,8 +172,8 @@ label start:
         play sound "heart.mp3"
         y "Total Eclipse of the Heads?"
         $ blockProgress()
-        # play music "radio.mp3"
-        y "Hydra Killed the Radio Star?"
+        play sound "mind.mp3"
+        y "Always on My Head?"
         $ blockProgress()
         play sound "eye.mp3"
         y "Heads of the Hydra?"
