@@ -1,2 +1,2 @@
 # Readme
-You know what you want.
+It's a game, about dating a Hydra. What more could you want?
