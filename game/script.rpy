@@ -337,7 +337,32 @@ label start:
 
     label art:
         y "Art gallery?"
+        a "Yeah, let's do that"
+        b "I'm surprised you'd suggest something so cultured"
+        c "I'm not an art fan, but I'd.. like that"
+        d "Let's go!"
         show bg gallery
+        a "Wow, the artwork here is pretty good!"
+        y "That's a mirror..."
+        a "Exactly!"
+        b "I dunno, this background looks pretty generic to me"
+        c "It's fine - what matters is the writing right?"
+        b "I guess - it's not very good is it?"
+        d "I like it"
+        y "What are you on about?"
+        a "I'd ignore it if I were you"
+        y "Okay..."
+        a "This art gallery is nice - there's not much artwork in it, but the stuff that's here is amazing"
+        b "I don't like this one..."
+        d "What is it?"
+        b "It's a depicion of a Hydra being killed by Hercules"
+        a "Well, that's canonically not true, people can make their own stories"
+        y "Uhh, what is the canonically true story"
+        a "Well..."
+        y "...2 hours later..."
+        a "... and that's why it's not true!"
+        y "That explains so much!"
+        a "I'm tired, let's go!"
         jump reshowdates
 
     label reshowdates:
