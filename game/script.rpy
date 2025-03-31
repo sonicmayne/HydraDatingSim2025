@@ -149,6 +149,7 @@ label start:
     hide c with dissolve
     hide d with dissolve
     hide hydra with dissolve
+    
     show hydra at t
     
     h "You're pretty okay, I guess you can have our contact details, here's our business card"
@@ -156,7 +157,7 @@ label start:
     h "Read it and find out"
     y "'Many Heads Are Better Than One' - A Conflict Resolution Agency"
     h "Well, we'd better be off, we've got a conflict to resolve. See you around?"
-
+    hide hydra with dissolve
     y "Later that night, I went home and forgot about the whole thing."
     y "The next morning, I woke up convinced it was a dream - until I found the business card in my pocket"
     y "After that, I invited the Hydra to..."
@@ -184,10 +185,18 @@ label start:
 
     label karaoke:
         y "Karaoke, how about it?"
+        show a at t
         a "What makes you think I'd like that?"
+        hide a with dissolve
+        show b at t
         b "I think I should choose what we - your idea sounds tedious"
+        hide b with dissolve
+        show c at t
         c "I'd like to go"
+        hide c with dissolve
+        show d at t
         d "As would I, another brilliant idea!"
+        hide d with dissolve
         y "With that in mind, we went to the karaoke"
         stop music
         show bg karaoke
@@ -204,88 +213,169 @@ label start:
         play sound "eye.mp3"
         y "Heads of the Hydra?"
         $ blockProgress()
+        show a at t
         a "All of your suggestions are awful"
+        hide a with dissolve
+        show b at t
         b "I wholeheartedly agree, are you an idiot?"
+        hide b with dissolve
         a "Hey, let's do this one!"
         # play music "friday night.mp3"
         $ blockProgress()
+        show c at t
         c "Wow, you're great at karaoke!"
+        hide c with dissolve
+        show a at t
         a "I'm ashamed to admit it, but you do have a rather good voice"
         $ aAffection += 10
         $ cAffection += 10
         y "You guys are too kind, I think you'd have a much better singing voice than I do"
         a "Well, you're not finding out. We're off."
+        hide a with dissolve
         jump reshowdates
 
     label themepark:
         y "What about Yeetland?"
+        show a at t
         a "That could be okay, I guess..."
+        hide a with dissolve
+        show b at t
         b "No, it's an awful idea. As was expected of you."
+        hide b with dissolve
+        show c at t
         c "What are we waiting for!? Let's go, posthaste!"
+        hide c with dissolve
+        show d at t
         d "I have a fear of heights, but let's do it!"
         show bg themepark
         d "Let's go on the Tea Cups!"
         d "Wait, let's do the Dodgems first!"
         d "Wait, wait, let's do the maze!"
+        hide d with dissolve
+        show b at t
         b "Those suggestions are pretty bland, I say we go on the Pirate Ship!"
+        hide b with dissolve
+        show d at t
         d "But I don't like heights..."
+        hide d with dissolve
+        show b at t
         b "Then how about the Twister or the Chair Planes then?"
+        hide b with dissolve
+        show d at t
         d "Those do sound better..."
+        hide d with dissolve
+        show b at t
         b "Don't tell me you don't like fast rides too?!"
+        hide b with dissolve
+        show d at t
         d "I plead the fifth!"
+        hide d with dissolve
         y "Hey, no need to get so argumentative over it - we can do them all, and you can close you're eyes if you're scared. Sound good?"
+        show a at t
         a "Where's my say?"
+        hide a with dissolve
+        show c at t
         c "I want to try everything!"
+        hide c with dissolve
         y "..."
         y "We went on all the rides, and I'm exhausted, everything feels like its moving"
+        show d at t
         d "Thank you for making me go past my boundaries..."
+        hide d with dissolve
+        show b at t
         b "Not only should you thank us, you should be praising us!"
+        hide b with dissolve
         y "Calm down..."
         y "Hey, before we go, want to go on the Cola Colossus?"
+        show d at t
         d "We are not going on a rollercoaster"
         y "Why not? I thought you had great fun on the rides"
         d "I did, but that's crossing a line"
+        hide d with dissolve
+        show a at t
         a "I don't like rollercoasters so I vote against it"
+        hide a with dissolve
+        show b at t
         b "Me too"
+        hide b with dissolve
+        show c at t
         c "I must admit, I do wish to, but I know when I'm outvoted"
+        hide c with dissolve
         y "Ah well, it was just an idea..."
         y "Are you thirsty?"
+        show a at t
         a "Yes, I'll have a water."
+        hide a wth dissolve
+        show b at t
         b "Water."
+        hide b with dissolve
+        show c at t
         c "Please may I have a chocolate milkshake?"
+        hide c with dissolve
+        show d at t
         d "Can I have a watermelon soda please?"
+        hide d with dissolve
         y "Coming right up!"
         y "..."
         y "Here you all go. I rather do hope you enjoy, especially at these prices"
+        show a at t
         a "You should be grateful for the opportunity to serve me"
         y "Hmm... I do wonder about that..."
         a "Thank you for today"
+        hide a with dissolve
+        show b at t
         b "Yeah, it was nice..."
+        hide b with dissolve
+        show c at t
         c "YOU'RE THE BEST"
+        hide c with dissolve
+        show d at t
         d "YOU REALLY ARE"
+        hide d with dissolve
         y "Thanks - I had fun too"
         jump reshowdates
 
     label beach:
         y "Beach?"
+        show a at t
         a "Water waste of time"
+        hide a with dissolve
+        show b at t
         b "The only beach here is you"
+        hide b with dissolve
+        show c at t
         c "Sounds good to me"
+        hide c with dissolve
+        show d at t
         d "Me too! Me too!"
+        hide d with dissolve
         show bg beach
         play music "Despacito.mp3"
         y "The waves were gently lapping against the shore, with foam rolling onto the sand, and the seabirds were lulling around on the sand."
+        show a at t
         a "Why are you narrating this like it's a documentary?"
         y "Wait? I said that out loud?!"
         a "Either that or I can read your mind you fool"
         y "Heh"
+        hide a with dissolve
+        show c at t
         c "Let's get ice cream!"
+        hide c with dissolve
+        show d at t
         d "No, lets' get a watermelon!"
+        hide d with dissolve
+        show a at t
         a "We're getting ice cream, and that's that. Well, you're getting the ice cream"
         y "Ice cream sounds delightful on a great day like today. What do you all want?"
         a "Mint"
+        hide a with dissolve
+        show b at t
         b "Chocolate"
+        hide b with dissolve
+        show c at t
         c "Bubblegum"
+        hide c with dissolve
+        show d at t
         d "Watermelon"
         y "Is watermelon a flavour of ice cream?"
         d "Not sure, I want watermelon though"
@@ -298,39 +388,89 @@ label start:
         else:
             y "Right, I'm back. I was unable to get you a watermelon, sorry. I did get you some strawberry ice cream, so I hope that you like that!"
             d "Thank you - I'm sure it'll be fine"
+        hide d with dissolve
+        show a at t
         a "Thank you for the ice cream"
+        hide a with dissolve
+        show b at t
         b "Yeah, thanks, I guess..."
+        hide b with dissolve
         c "THANK YOU"
+        hide c with dissolve
         y "No need to shout - I'm just glad you're enjoying it"
         y "..."
         y "Huh, wanna go for a dip in the sea?"
+        show a at t
         a "I like the cut of your jib"
+        hide a with dissolve
         y "What?"
+        show a at t
         a "Err, nothing, ignore that! Yes, I would like to go"
+        hide a with dissolve
+
+        show b at t
         b "Well, I certainly don't!"
+        hide b with dissolve
+        show a at t
         a "Well, I do!"
+        hide a with dissolve
+
+        show b at t
         b "Well, I certainly don't!"
+        hide b with dissolve
+        show a at t
         a "Well, I do!"
+        hide a with dissolve
+
+        show b at t
         b "Well, I certainly don't!"
+        hide b with dissolve
+        show a at t
         a "Well, I do!"
+        hide a with dissolve
+
+        show b at t
         b "Well, I certainly don't!"
+        hide b with dissolve
+        show a at t
         a "Well, I do!"
+        hide a with dissolve
+
+        show b at t
         b "Well, I certainly don't!"
+        hide b with dissolve
+        show a at t
         a "Well, I do!"
+        hide a with dissolve
+
         y "Uh, guys? Wanna stop the arguing?"
+        show a at t
         a "I WANT TO SWIM"
+        hide a with dissolve
+        show b at t
         b "I DON'T"
+        hide b with dissolve
+        show c at t
         c "Hey, let's vote on it - I would like the swimming very much"
+        hide c with dissolve
+        show d at t
         d "Me too"
+        hide d with dissolve
+        show b at t
         b "I can't argue with democracy"
         y "*splash*"
         y "Hey, stop splashing the water in my face!"
         b "I don't know why I didn't want to do this - this is great fun"
+        hide b with dissolve
+        show c at t
         c "I'm having fun in the sun"
+        hide c with dissolve
         y "*splash splash*"
         y "..."
         y "Well, I'm beat, see you tomorrow?"
+        show hydra at t
         h "Sure!"
+        hide hydra with dissolve
         $ aAffection += 5
         $ bAffection += 5
         $ cAffection += 5
@@ -339,11 +479,20 @@ label start:
 
     label axe:
         y "Axe throwing?"
+        show a at t
         a "No!"
+        hide a with dissolve
+        show b at t
         b "No!"
+        hide b with dissolve
+        show c at t
         c "No!"
+        hide c with dissolve
+        show d at t
         d "No!"
+        hide d with dissolve
         y "It was just a suggestion!"
+        show a at t
         a "Well, you can take your suggestion and move it where the sun doesn't shine"
         y "Who knew it was so easy to wind up a Hydra"
         a "Choose your next actions very wisely"
@@ -351,7 +500,11 @@ label start:
             "Double down":
                 y "You know you want to..."
                 a "Right, that's it."
+                hide a with dissolve
+                show b at t
                 b "Can I unleash my full fury?"
+                hide b with dissolve
+                show a at t
                 a "Yes"
                 y "..."
                 y "I am slowly losing my grip on reality"
@@ -359,29 +512,57 @@ label start:
                 return
             "Concede the point":
                 y "All right let's do something else"
+                hide a with dissolve
                 jump reshowdates
 
     label art:
         y "Art gallery?"
+        show a at t
         a "Yeah, let's do that"
+        hide a with dissolve
+        show b at t
         b "I'm surprised you'd suggest something so cultured"
+        hide b with dissolve
+        show c at t
         c "I'm not an art fan, but I'd.. like that"
+        hide c with dissolve
+        show d at t
         d "Let's go!"
+        hide d with dissolve
         show bg gallery
+        show a at t
         a "Wow, the artwork here is pretty good!"
         y "That's a mirror..."
         a "Exactly!"
+        hide a with dissolve
+        show b at t
         b "I dunno, this background looks pretty generic to me"
+        hide b with dissolve
+        show c at t
         c "It's fine - what matters is the writing right?"
+        hide c with dissolve
+        show b at t
         b "I guess - it's not very good is it?"
+        hide b with dissolve
+        show d at t
         d "I like it"
+        hide d with dissolve
         y "What are you on about?"
+        show a at t
         a "I'd ignore it if I were you"
         y "Okay..."
         a "This art gallery is nice - there's not much artwork in it, but the stuff that's here is amazing"
+        hide a with dissolve
+        show b at t
         b "I don't like this one..."
+        hide b with dissolve
+        show d at t
         d "What is it?"
+        hide d with dissolve
+        show b at t
         b "It's a depicion of a Hydra being killed by Hercules"
+        hide b with dissolve
+        show a at t
         a "Well, that's canonically not true, people can make their own stories"
         y "Uhh, what is the canonically true story"
         a "Well..."
@@ -389,6 +570,7 @@ label start:
         a "... and that's why it's not true!"
         y "That explains so much!"
         a "I'm tired, let's go!"
+        hide a with dissolve
         jump reshowdates
 
     label reshowdates:
