@@ -10,6 +10,8 @@ define b = Character("Alice")
 define c = Character("Rhea")
 define d = Character("Theia")
 
+image black = "#000"
+
 default aAffection = 0
 default bAffection = 0
 default cAffection = 0
@@ -577,7 +579,26 @@ label start:
         if datechoices <= 2:
             jump dates
 
-
-    # This ends the game.
+    hide a with dissolve
+    hide b with dissolve
+    hide c with dissolve
+    hide d with dissolve
+    hide hydra with dissolve
+    scene black
+    y "*BANG*"
+    y "What.. was that noise?!"
+    y "Why do I feel so groggy?"
+    y "Mum, I don't want to go to school today..."
+    y "I tried opening my eyes..."
+    y "...just a bit more..."
+    y "...it can't be done..."
+    y "Argh!"
+    scene bg room
+    y "It started when I was needing hydra-ted..."
+    y "Man, I need to get myself a partner if I'm getting that desparate"
+    y "..."
+    y "..."
+    y "..."
+    y "Maybe this is the dream?"
 
     return
