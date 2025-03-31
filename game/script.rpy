@@ -26,7 +26,12 @@ init python:
     def blockProgress():
         if renpy.music.is_playing('sound'):
             remaining_duration = 22
-            renpy.pause(remaining_duration, hard=True)  
+            renpy.pause(remaining_duration, hard=True)
+            
+transform t:
+    zoom 0.5
+    xpos 0.4
+    ypos 0.25
 
 # The game starts here.
 
@@ -39,18 +44,13 @@ label start:
 
     scene bg room
 
-    # This shows a character sprite. A placeholder is used, but you can
-    # replace it by adding a file named "eileen happy.png" to the images
-    # directory.
-
-    show eileen happy
-
     show screen button with dissolve
 
     # These display lines of dialogue.
 
     y "It started when I was needing hydra-ted. The Hydra was there, with each head arguing amongst themselves, whilst perusing the drinks aisle, arguing about which brand of drink to buy."
     y "Then, all the heads turned to me and proceeded to stare at me, so I decided to pick up some..."
+    show hydra at t
 
     default headA = 0
     default headB = 0
@@ -58,6 +58,8 @@ label start:
     default headD = 0
     menu:
         "Water":
+            hide hydra with dissolve
+            show a at t
             a "Water? Suits a plain fool, such as yourself."
             y "Thanks, I guess?"
             a "You dare talk back to me? Who do you think you are?"
@@ -65,6 +67,8 @@ label start:
             a "Please, don't go..."
             $ aAffection += 5
         "Soda":
+            hide hydra with dissolve
+            show b at t
             b "I think you'll find that's mine."
             y "She look my soda. I'm still dehydra-ted, but somehow, I think I'll be fine."
             b "Wait, this isn't Diet, what are you tryng to do to me?!"
@@ -73,6 +77,8 @@ label start:
             y "Thanks, I guess?"
             $ bAffection += 5
         "Limeade":
+            hide hydra with dissolve
+            show c at t
             c "Awww, that was the last limeade. Don't worry about me, go and enjoy it. I'll think about other options..."
             y "You can have it if you really want it..."
             c "No, go ahead and enjoy yourself whilst I remain like limeade itself, sour"
@@ -84,35 +90,48 @@ label start:
             y "I sometimes think back to that day and wonder what could have been"
             return
         "Wine":
+            hide hydra with dissolve
+            show d at t
             d "Wine?! Truly the drinks of the gods! One does appreciate how it tastes. You've really made the right call here!"
             y "It's only wine, but I must concur with you if I'm honest"
             d "See?! I knew you'd get it."
             $ dAffection += 5
+            
+    hide a with dissolve
+    hide b with dissolve
+    hide c with dissolve
+    hide d with dissolve
+    hide hydra with dissolve
 
     menu:
         "Suddenly I felt the urge to.."
         "Use a pickup line":
             menu:
                 "Damn, if I knew this was a date, I'd have dressed up":
+                    show b at t
                     b "Looking at the way you're dressed, I'd have thought it was a reunion of Adam West's Batman and Robin"
                     y "I'm like Batman? That's ace!"
                     b "No, you're Robin"
                     y "Ouch"
                     $ bAffection += 5
                 "Even if there was no gravity, I'd still fall for you":
+                    show a at t
                     a "The cheek to talk to me like that!"
                     a "Well, thanks for the compliment I guess"
                     $ aAffection += 5
         "Tell a joke":
             menu:
                 "I had a hydra joke, but it got ahead of itself":
+                    show c at t
                     c "*hee hee*"
                     $ cAffection += 5
                 "Some people are hydrophobic, I'm hydraphobic":
+                    show d at t
                     d "Wow, that's clever, like so clever! How do you manage it?"
                     y "It wasn't really that good..."
                     $ dAffection += 5
         "Shout 'FIRE!'":
+            show h at t
             h "WHAT?! WHERE?!"
             y "The Hydra frantically looked around for the source of the fire, before realising I was playing a prank"
             h  "YOU DARE FIND THIS FUNNY?"
@@ -125,6 +144,13 @@ label start:
             y "The next thing I knew, I woke up in hospital. I don't know what happened to the Hydra after that"
             return
 
+    hide a with dissolve
+    hide b with dissolve
+    hide c with dissolve
+    hide d with dissolve
+    hide hydra with dissolve
+    show hydra at t
+    
     h "You're pretty okay, I guess you can have our contact details, here's our business card"
     y "You have a business card? What for?"
     h "Read it and find out"
