@@ -131,7 +131,7 @@ label start:
                     y "It wasn't really that good..."
                     $ dAffection += 5
         "Shout 'FIRE!'":
-            show h at t
+            show hydra at t
             h "WHAT?! WHERE?!"
             y "The Hydra frantically looked around for the source of the fire, before realising I was playing a prank"
             h  "YOU DARE FIND THIS FUNNY?"
