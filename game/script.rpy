@@ -46,8 +46,6 @@ label start:
 
     scene bg room
 
-    show screen button with dissolve
-
     # These display lines of dialogue.
 
     y "It started when I was needing hydra-ted. The Hydra was there, with each head arguing amongst themselves, whilst perusing the drinks aisle, arguing about which brand of drink to buy."
